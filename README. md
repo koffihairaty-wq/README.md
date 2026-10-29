@@ -1,0 +1,16 @@
+const readline = require("node:readline"); : permet d'utiliser le module readline pour lire les informations saisies dans le terminal.
+
+readline.createInterface() : permet de communiquer avec l'utilisateur.
+
+process.stdin : reçoit ce que l'utilisateur saisit.
+
+process.stdout : permet d'afficher des informations dans le terminal.
+
+rl.question() : pose une question à l'utilisateur.
+
+Number(answer) : transforme la réponse saisie en nombre.
+
+console.log() : affiche le résultat.
+
+rl.close() : ferme l'interface de saisie.
+

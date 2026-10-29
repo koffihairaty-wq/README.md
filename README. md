@@ -1,16 +1,78 @@
-const readline = require("node:readline"); : permet d'utiliser le module readline pour lire les informations saisies dans le terminal.
 
-readline.createInterface() : permet de communiquer avec l'utilisateur.
+# Mon premier projet Node.js
 
-process.stdin : reçoit ce que l'utilisateur saisit.
+## 1. Présentation du projet
+Ce projet est un programme simple réalisé en JavaScript avec Node.js dans le cadre de ma formation à la Digital Farming School (DFS).
+Il permet de demander à un utilisateur de saisir un nombre dans le terminal, puis d'afficher ce nombre à l'écran.
 
-process.stdout : permet d'afficher des informations dans le terminal.
+## 2. Objectifs du projet
+- Découvrir le fonctionnement de Node.js.
+- Apprendre à utiliser le module readline.
+- Récupérer une information saisie par l'utilisateur.
+- Convertir une saisie en nombre.
+- Afficher un résultat dans le terminal.
+- Fermer correctement le programme.
 
-rl.question() : pose une question à l'utilisateur.
+## 3. Technologies utilisées
+- JavaScript : langage de programmation.
+- Node.js : environnement d'exécution JavaScript.
+- VS Code : éditeur de code.
+- Git et GitHub : gestion et partage du projet.
 
-Number(answer) : transforme la réponse saisie en nombre.
+## 4. Code du programme
+```javascript
+const readline = require("node:readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+rl.question("entrez un nombre :", (answer) => {
+    const number = Number(answer);
+    console.log("le nombre est:", number);
+    rl.close();
+});
+```
 
-console.log() : affiche le résultat.
+## 5. Explication des commandes
+### require("node:readline")
+Permet d'importer le module readline de Node.js.
+### readline.createInterface()
+Crée une interface pour communiquer avec l'utilisateur.
+### process.stdin
+Permet de recevoir les informations saisies au clavier.
+### process.stdout
+Permet d'afficher des informations dans le terminal.
+### rl.question()
+Pose une question à l'utilisateur et attend sa réponse.
+### Number(answer)
+Convertit la réponse saisie en nombre.
+### console.log()
+Affiche le résultat dans le terminal.
+### rl.close()
+Ferme l'interface de saisie.
 
-rl.close() : ferme l'interface de saisie.
+## 6. Exécution du programme
+Pour exécuter le programme :
+1. Installer Node.js.
+2. Ouvrir le projet dans VS Code.
+3. Ouvrir le terminal.
+4. Saisir la commande :
+```bash
+node index.js
+```
+5. Entrer un nombre et appuyer sur Entrée.
 
+## 7. Exemple de résultat
+```text
+entrez un nombre : 7
+le nombre est: 7
+```
+
+## 8. Résultat obtenu
+Le programme récupère le nombre saisi, le convertit en valeur numérique et l'affiche dans le terminal.
+Si l'utilisateur saisit un texte non convertible en nombre, le programme affiche NaN.
+
+## 9. Conclusion
+Cet exercice m'a permis de comprendre comment utiliser Node.js pour interagir avec un utilisateur à travers le terminal.
+J'ai appris à utiliser le module readline, à récupérer une saisie, à convertir des données et à afficher un résultat avec JavaScript.
+Ce projet représente une première étape dans mon apprentissage de Node.js.
